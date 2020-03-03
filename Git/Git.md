@@ -2,13 +2,13 @@
 
 ##1、					Git命令
 
-#### 1、 关闭远程关联
+#### 1、关闭远程关联
 
 ​	$ git remote rm origin
 
 #### 2、建立远程关联
 
-​	$ git remote add origin 'git address'
+​	$ git remote add origin git@github.com:CQSYCH/MyNotes.git
 
 #### 3、创建文件
 
@@ -50,7 +50,9 @@
 
 ​	$ git branch development
 
-#### 13、切换分支
+#### 13、切换分支（切换分支、切换版本tag、切换提交commit、还原文件）
+
+​	**注意：**checkout撤销，只能撤销没有add进暂存区的文件
 
 ​	$ git checkout development
 
@@ -63,6 +65,8 @@
 	##### 	1、先切换到主分支再合并分支
 
 #####	2、$ git merge development
+
+​	**注意：**$ git rebase development,该命令也是合并分支的意思
 
 #### 16、合并后删除分支
 
@@ -80,7 +84,55 @@
 
 	##### 	2、git tag(查看历史版本)
 
+#### 19、Git Clone远程仓库到本地仓库
 
+​	**注意:** 本地仓库目录直接克隆下载
+
+​	$ git clone git@github.com:CQSYCH/MyNotes.git 
+
+ #### 20、拉取远程仓库文件
+
+​	**注意：**在远程仓库主分支上拉取仓库文件
+
+​	$ git pull origin master
+
+#### 21、提交本地仓库到远程仓库
+
+​	$ git push origin master
+
+#### 22、查看远程仓库
+
+​	$ git remote -v
+
+#### 23、查看Git 提交改动
+
+​	**注意：**
+
+		##### 		1、红色的部分前面有个 - 代表我删除的 
+
+		##### 		2、绿色的部分前面有个 + 代表我增加的 
+
+​		git diff <$id1> <$id2> # 比较两次提交之间的差异 
+
+​		git diff <branch>..<branch> # 在两个分支之间比较 
+
+​		git diff --staged # 比较暂存区和版本库差异 
+
+​	$ git diff
+
+#### 24、暂存代码
+
+​	**注意：**把当前分支所有没有 commit 的代码先暂存起来 	
+
+​	$ git stash list（暂存代码）
+
+​	$ git stash apply （代码还原）
+
+​	$ git stash drop （删除暂存区Stash记录）
+
+​	$ git stash pop （删除最近一条的 stash 记录 ）
+
+​	$ git stash clear（清空）
 
 
 
